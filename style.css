@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background-color: rgb(196, 7, 136);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}   
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.no {
+    background-color: red;
+}
+
+.yes {
+    background-color: green;
+}
