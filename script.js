@@ -22,6 +22,7 @@ const arr = [
 const btn = document.querySelector('.btn');
 btn.addEventListener('click', () => {
     const randomThree = getRandomUnique(arr, 3); // генеруємо нові кожного разу
+    output.classList.remove('hide');
     output.innerHTML = `${randomThree[0]}, ${randomThree[1]}, ${randomThree[2]}`;
 })
 
