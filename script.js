@@ -20,13 +20,13 @@ const arr = [
 ]
 
 const btn = document.querySelector('.btn');
+const output = document.querySelector('.output');
+
 btn.addEventListener('click', () => {
     const randomThree = getRandomUnique(arr, 3); // генеруємо нові кожного разу
     output.classList.remove('hide');
     output.innerHTML = `${randomThree[0]}, ${randomThree[1]}, ${randomThree[2]}`;
 })
-
-const output = document.querySelector('.output');
 
 // Функція для вибору 3 випадкових елементів без повторів
 function getRandomUnique(arr, count) {
