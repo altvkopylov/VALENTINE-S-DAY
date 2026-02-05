@@ -4,12 +4,11 @@
 }
 
 .hide {
-    display: none;
+    opacity: 0;
 }
 
 body {
     background-color: rgb(196, 7, 136);
-    color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,27 +17,20 @@ body {
     align-items: center;
 }   
 
-.btns {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 .btn {
     padding: 10px 20px;
-    color: white;
+    font-size: 36px;
     border-radius: 10px;
     border: none;
 }
 
+.output {
+    font-size: 24px;
+    background-color: aqua;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
 .btn:hover {
     opacity: 0.8;
-}
-
-.no {
-    background-color: red;
-}
-
-.yes {
-    background-color: green;
 }

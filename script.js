@@ -1,33 +1,43 @@
-const yes = document.querySelector('.yes');
-const no = document.querySelector('.no');
-const title = document.querySelector('.title');
-const img = document.querySelector('.img');
+const arr = [
+    'Неохайний',
+    'Нейтральний',
+    'Неактивний спобіб життя',
+    'Консервативні погляди',
+    'Стабільний',
+    'Дбайливий',
+    'За фемінізм',
+    'Емоційно недоступний',
+    'Невпевненний',
+    'Маніпулятор',
+    'Небезпечний',
+    'Пов\'язаний з криміналом',
+    'Контролюючий',
+    'Приємний в спілкуванні',
+    'Не викликає емоцій',
+    'Підступний спокусник',
+    'Піздабол',
+    'Охайний та чистоплотний'
+]
 
-yes.addEventListener('click', () => {
-    yes.classList.add('hide');
-    no.classList.add('hide');
-    title.classList.add('hide');
-    img.classList.remove('hide');
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', () => {
+    const randomThree = getRandomUnique(arr, 3); // генеруємо нові кожного разу
+    output.innerHTML = `${randomThree[0]}, ${randomThree[1]}, ${randomThree[2]}`;
 })
 
-let count = 0;
+const output = document.querySelector('.output');
 
-no.addEventListener('click', () => {
-    // const currentSize = window.getComputedStyle(yes).fontSize;
-    // const newSize = parseFloat(currentSize) * 1.5;
-    // yes.style.fontSize = `${newSize}px`;
+// Функція для вибору 3 випадкових елементів без повторів
+function getRandomUnique(arr, count) {
+  const copy = [...arr]; // створюємо копію масиву
+  const result = [];
 
-    const styles = window.getComputedStyle(yes);
+  for (let i = 0; i < count; i++) {
+    const index = Math.floor(Math.random() * copy.length);
+    result.push(copy[index]);
+    copy.splice(index, 1); // видаляємо, щоб не повторювались
+  }
 
-    const fontSize = parseFloat(styles.fontSize);
-    const paddingY = parseFloat(styles.paddingTop);   // 10px
-    const paddingX = parseFloat(styles.paddingLeft);  // 20px
-
-    yes.style.fontSize = `${fontSize * 1.5}px`;
-    yes.style.padding = `${paddingY * 1.1}px ${paddingX * 1.1}px`;
-
-    count++;
-    if (count == 9) {
-        no.classList.add('hide');
-    }
-})
+  return result;
+}
+// console.log(randomThree);
